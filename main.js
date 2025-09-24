@@ -49,19 +49,33 @@ function evaluateWinner(playerOne, playerTwo) {
   }
 }
 
-let continue_game = true;
-while (continue_game) {
-  let humanInput = parseInt(prompt("Choose 0 - rock, 1 - paper, 2 - scissors"));
-  if (humanInput >= 0 && humanInput <= 2) {
-    playGame(humanInput, getRandomInt(0, 2));
-  } else {
-    continue_game = confirm(
-      "Incorrect choice. Do you want to continue playing?"
-    );
-    continue;
-  }
-
-  continue_game = confirm("Do you want to continue playing?");
+function updateScoresOnUI() {
+  humanScore.textContent = score.human;
+  computerScore.textContent = score.computer;
 }
+
+function play(e) {
+  console.log(e.target.dataset.value);
+  const humanInput = parseInt(e.target.dataset.value);
+  const computerInput = getRandomInt(0, 2);
+  playGame(humanInput, computerInput);
+  updateScoresOnUI();
+}
+
+const rockButton = document.querySelector("#rock_button");
+const paperButton = document.querySelector("#paper_button");
+const scissorsButton = document.querySelector("#scissors_button");
+const humanScore = document.querySelector("#human_score");
+const computerScore = document.querySelector("#computer_score");
+const restartButton = document.querySelector("#restart");
+
+rockButton.addEventListener("click", play);
+paperButton.addEventListener("click", play);
+scissorsButton.addEventListener("click", play);
+restartButton.addEventListener("click", () => {
+  score.human = 0;
+  score.computer = 0;
+  updateScoresOnUI();
+});
 
 // Prompt user
