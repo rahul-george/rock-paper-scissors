@@ -1,0 +1,60 @@
+body {
+  display: flex;
+  justify-content: center;
+  border: 1px solid black;
+  min-width: 60vw;
+}
+.game_frame {
+  width: 60vw;
+  border: 1px solid black;
+}
+header {
+  display: flex;
+  justify-content: center;
+  color: red;
+}
+
+.scorecard {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 30px;
+  border: 1px solid red;
+}
+.current_game {
+  border: 1px solid red;
+  display: flex;
+  flex-direction: column;
+}
+
+.game_controls {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  width: 60vw;
+  margin: 10px 0px;
+
+  border: 1px solid black;
+}
+
+.restart_game {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0px;
+}
+
+.game_control {
+  width: 8rem;
+  height: 8rem;
+  border-radius: 10%;
+}
+
+.restart {
+  border-radius: 5cap;
+  width: 8rem;
+  height: 4rem;
+}

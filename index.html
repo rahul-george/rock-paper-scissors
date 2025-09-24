@@ -1,12 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
     <script src="./main.js"></script>
     <title>Document</title>
-</head>
-<body>
-    
-</body>
+  </head>
+  <body>
+    <!-- Game Frame -->
+    <div class="game_frame">
+      <!-- Title Block -->
+      <header>
+        <h1>Rock Paper Scissors</h1>
+      </header>
+
+      <!-- Score Card -->
+      <section class="scorecard">
+        <div class="player">
+          <p class="player_name">You</p>
+          <p class="player_score">0</p>
+        </div>
+        <div class="player">
+          <p class="player_name">Computer</p>
+          <p class="player_score">0</p>
+        </div>
+      </section>
+
+      <!-- Current Game -->
+      <section class="current_game">
+        <section></section>
+        <div class="game_controls">
+          <button class="game_control">Rock</button>
+          <button class="game_control">Paper</button>
+          <button class="game_control">Scissors</button>
+        </div>
+        <div class="restart_game">
+          <button class="restart">restart</button>
+        </div>
+        <!-- Commentary -->
+        <section class="commentary"></section>
+      </section>
+
+      <!-- Footer - Copyright -->
+      <footer></footer>
+    </div>
+  </body>
 </html>
