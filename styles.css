@@ -58,3 +58,35 @@ header {
   width: 8rem;
   height: 4rem;
 }
+
+.commentary {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0px;
+  padding: 10px 0px;
+  max-height: 20vh;
+  overflow-y: auto;
+}
+
+footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0px;
+}
+
+.game_history {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0px;
+  padding: 10px 0px;
+}
+.gameResult {
+  background-color: antiquewhite;
+  list-style-type: none;
+}

@@ -30,19 +30,36 @@
       <section class="current_game">
         <section></section>
         <div class="game_controls">
-          <button class="game_control" data-value=0 id="rock_button">Rock</button>
-          <button class="game_control" data-value=1 id="paper_button">Paper</button>
-          <button class="game_control" data-value=2 id="scissors_button">Scissors</button>
+          <button class="game_control" data-value="0" id="rock_button">
+            Rock
+          </button>
+          <button class="game_control" data-value="1" id="paper_button">
+            Paper
+          </button>
+          <button class="game_control" data-value="2" id="scissors_button">
+            Scissors
+          </button>
         </div>
         <div class="restart_game">
           <button class="restart" id="restart">restart</button>
         </div>
         <!-- Commentary -->
-        <section class="commentary"></section>
+        <section class="commentary">
+          <h1>Commentary</h1>
+          <ul class="game_history">
+
+          </ul>
+        </section>
       </section>
 
       <!-- Footer - Copyright -->
-      <footer></footer>
+      <footer>
+        ©
+        <script>
+          document.write(new Date().getFullYear());
+        </script>
+        Rahul George. All rights reserved.
+      </footer>
     </div>
     <script src="./main.js"></script>
   </body>
