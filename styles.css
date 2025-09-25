@@ -1,19 +1,23 @@
 body {
   display: flex;
   justify-content: center;
-  min-width: 60vw;
+  background-color: #393e46;
+  margin: 0;
+  padding: 0;
+  color: #dfd0b8;
+  /* color: #EEEEEE;  */
 }
 .game_frame {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  width: 60vw;
 }
 header {
   display: flex;
   justify-content: center;
-  color: red;
+  background-color: #222831;
+  width: 100vw;
 }
 
 .scorecard {
@@ -74,11 +78,18 @@ header {
   overflow-y: clip;
   padding: 5px;
   max-height: 20vh;
+  width: 60vw;
+
+  border: 2px solid #dfd0b8;
+  background-color: #948979;
 }
 .gameResult {
   list-style-type: none;
   padding: 2px;
-  margin: 2px;
+  color: #dfd0b8;
+  background-color: #948979;
+  /* border: 1px solid #dfd0b8; */
+  width: 59vw;
 }
 
 footer {
