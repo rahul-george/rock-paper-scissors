@@ -1,12 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="./main.js"></script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
     <title>Document</title>
-</head>
-<body>
-    
-</body>
+  </head>
+  <body>
+    <!-- Game Frame -->
+    <div class="game_frame">
+      <!-- Title Block -->
+      <header>
+        <h1>Rock Paper Scissors</h1>
+      </header>
+
+      <!-- Score Card -->
+      <section class="scorecard">
+        <div class="player">
+          <p class="player_name">You</p>
+          <p class="player_score" id="human_score">0</p>
+        </div>
+        <div class="player">
+          <p class="player_name">Computer</p>
+          <p class="player_score" id="computer_score">0</p>
+        </div>
+      </section>
+
+      <!-- Current Game -->
+      <section class="current_game">
+        <section></section>
+        <div class="game_controls">
+          <button class="game_control" data-value="0" id="rock_button">
+            Rock
+          </button>
+          <button class="game_control" data-value="1" id="paper_button">
+            Paper
+          </button>
+          <button class="game_control" data-value="2" id="scissors_button">
+            Scissors
+          </button>
+        </div>
+        <div class="restart_game">
+          <button class="restart" id="restart">restart</button>
+        </div>
+        <!-- Commentary -->
+        <section class="commentary">
+          <h1>Commentary</h1>
+          <ul class="game_history">
+
+          </ul>
+        </section>
+      </section>
+
+      <!-- Footer - Copyright -->
+      <footer>
+        ©
+        <script>
+          document.write(new Date().getFullYear());
+        </script>
+        Rahul George. All rights reserved.
+      </footer>
+    </div>
+    <script src="./main.js"></script>
+  </body>
 </html>

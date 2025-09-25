@@ -20,15 +20,18 @@ function playGame(humanInput, computerInput) {
   round++;
   let winner = evaluateWinner(humanInput, computerInput);
 
+  let message = "";
   if (winner === "playerOne") {
-    console.log(`😀 You win round ${round}`);
+    message = `😀 You win round ${round}`;
     score["human"]++;
   } else if (winner === "playerTwo") {
-    console.log(`😞 You lost round ${round}`);
+    message = `😞 You lost round ${round}`;
     score["computer"]++;
   } else {
-    console.log(`😐 Round ${round} a tie`);
+    message = `😐 Round ${round} a tie`;
   }
+  console.log(message);
+  updateUI(message);
 }
 
 function evaluateWinner(playerOne, playerTwo) {
@@ -49,19 +52,49 @@ function evaluateWinner(playerOne, playerTwo) {
   }
 }
 
-let continue_game = true;
-while (continue_game) {
-  let humanInput = parseInt(prompt("Choose 0 - rock, 1 - paper, 2 - scissors"));
-  if (humanInput >= 0 && humanInput <= 2) {
-    playGame(humanInput, getRandomInt(0, 2));
-  } else {
-    continue_game = confirm(
-      "Incorrect choice. Do you want to continue playing?"
-    );
-    continue;
-  }
-
-  continue_game = confirm("Do you want to continue playing?");
+function updateUI(message) {
+  // Update the UI with score and commentary
+  updateScoresOnUI();
+  let listItem = document.createElement("li");
+  listItem.textContent = message;
+  listItem.classList.add("gameResult");
+  gameHistoryList.prepend(listItem);
 }
+
+function resetUI() {
+  // reset the UI at the time of a game restart.
+  let allGameResult = document.querySelectorAll(".gameResult");
+  allGameResult.forEach((result) => result.remove());
+}
+
+function updateScoresOnUI() {
+  humanScore.textContent = score.human;
+  computerScore.textContent = score.computer;
+}
+
+function play(e) {
+  console.log(e.target.dataset.value);
+  const humanInput = parseInt(e.target.dataset.value);
+  const computerInput = getRandomInt(0, 2);
+  playGame(humanInput, computerInput);
+}
+
+const rockButton = document.querySelector("#rock_button");
+const paperButton = document.querySelector("#paper_button");
+const scissorsButton = document.querySelector("#scissors_button");
+const humanScore = document.querySelector("#human_score");
+const computerScore = document.querySelector("#computer_score");
+const restartButton = document.querySelector("#restart");
+const gameHistoryList = document.querySelector(".game_history");
+
+rockButton.addEventListener("click", play);
+paperButton.addEventListener("click", play);
+scissorsButton.addEventListener("click", play);
+restartButton.addEventListener("click", () => {
+  score.human = 0;
+  score.computer = 0;
+  updateScoresOnUI();
+  resetUI();
+});
 
 // Prompt user
