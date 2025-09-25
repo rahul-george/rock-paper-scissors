@@ -1,12 +1,14 @@
 body {
   display: flex;
   justify-content: center;
-  border: 1px solid black;
   min-width: 60vw;
 }
 .game_frame {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
   width: 60vw;
-  border: 1px solid black;
 }
 header {
   display: flex;
@@ -19,10 +21,8 @@ header {
   flex-direction: row;
   justify-content: center;
   gap: 30px;
-  border: 1px solid red;
 }
 .current_game {
-  border: 1px solid red;
   display: flex;
   flex-direction: column;
 }
@@ -35,8 +35,6 @@ header {
   gap: 20px;
   width: 60vw;
   margin: 10px 0px;
-
-  border: 1px solid black;
 }
 
 .restart_game {
@@ -62,12 +60,25 @@ header {
 .commentary {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
-  margin: 10px 0px;
-  padding: 10px 0px;
+  max-height: 40vh;
+  flex: 0;
+}
+
+.game_history {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  overflow-y: clip;
+  padding: 5px;
   max-height: 20vh;
-  overflow-y: auto;
+}
+.gameResult {
+  list-style-type: none;
+  padding: 2px;
+  margin: 2px;
 }
 
 footer {
@@ -76,17 +87,4 @@ footer {
   justify-content: center;
   align-items: center;
   margin: 10px 0px;
-}
-
-.game_history {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin: 10px 0px;
-  padding: 10px 0px;
-}
-.gameResult {
-  background-color: antiquewhite;
-  list-style-type: none;
 }

@@ -30,7 +30,7 @@ function playGame(humanInput, computerInput) {
   } else {
     message = `😐 Round ${round} a tie`;
   }
-
+  console.log(message);
   updateUI(message);
 }
 
@@ -64,7 +64,7 @@ function updateUI(message) {
 function resetUI() {
   // reset the UI at the time of a game restart.
   let allGameResult = document.querySelectorAll(".gameResult");
-  allGameResult.forEach(result => result.remove());
+  allGameResult.forEach((result) => result.remove());
 }
 
 function updateScoresOnUI() {
