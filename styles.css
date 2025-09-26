@@ -50,15 +50,37 @@ header {
 }
 
 .game_control {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
   width: 8rem;
   height: 8rem;
   border-radius: 10%;
+  background-color: #948979;
+  box-shadow: none;
+  border: none;
+}
+
+.game_control > span {
+  font-size: 60px;
 }
 
 .restart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
   border-radius: 5cap;
   width: 8rem;
   height: 4rem;
+  background-color: #948979;
+  border: none;
+  font-size: 18px;
+  box-shadow: none;
+  color: #393e46;
 }
 
 .commentary {
@@ -86,7 +108,7 @@ header {
 .gameResult {
   list-style-type: none;
   padding: 2px;
-  color: #dfd0b8;
+  color: #393e46;;
   background-color: #948979;
   /* border: 1px solid #dfd0b8; */
   width: 59vw;
