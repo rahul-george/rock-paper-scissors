@@ -16,19 +16,24 @@
 
       <!-- Score Card -->
       <section class="scorecard">
-        <div class="player">
-          <span id="human_choice" class="player_choice">❔</span>
-          <span class="player_score">
-            <p class="player_name">You:</p>
-            <p class="player_score" id="human_score">0</p>
-          </span>
+        <div>
+          <div class="player">
+            <span class="player_score">
+              <p class="player_name">You:</p>
+              <p class="player_score" id="human_score">0</p>
+            </span>
+            <span id="human_choice" class="player_choice">❔</span>
+          </div>
+          <div class="player">
+            <span class="player_score">
+              <p class="player_name">Computer:</p>
+              <p class="player_score" id="computer_score">0</p>
+            </span>
+            <span id="computer_choice" class="player_choice">❔</span>
+          </div>
         </div>
-        <div class="player">
-          <span id="computer_choice" class="player_choice">❔</span>
-          <span class="player_score">
-            <p class="player_name">Computer:</p>
-            <p class="player_score" id="computer_score">0</p>
-          </span>
+        <div class="game_outcome">
+          <p id="game_message">Start a game! First player to reach 5 wins!</p>
         </div>
       </section>
 

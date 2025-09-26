@@ -5,7 +5,7 @@ body {
   margin: 0;
   padding: 0;
   color: #dfd0b8;
-  /* color: #EEEEEE;  */
+  font-size: 18px;
 }
 .game_frame {
   display: flex;
@@ -22,10 +22,21 @@ header {
 
 .scorecard {
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 22vh;
+}
+
+.scorecard > div {
+  display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  height: 20vh;
+}
+
+#game_message {
+  font-size: 24px;
 }
 
 .player {
@@ -56,6 +67,10 @@ header {
   align-items: center;
   gap: 10px;
   font-size: 18px;
+}
+
+.disable-element {
+  pointer-events: none;
 }
 
 .current_game {
@@ -112,6 +127,7 @@ header {
   background-color: #948979;
   border: none;
   font-size: 18px;
+  font-weight: bold;
   box-shadow: none;
   color: #393e46;
   border: 1px solid #dfd0b8;

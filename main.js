@@ -30,8 +30,19 @@ function playGame(humanInput, computerInput) {
   } else {
     message = `😐 Round ${round} a tie`;
   }
+
   console.log(message);
   updateUI(message, humanInput, computerInput);
+
+  if (score["computer"] === maxRounds) {
+    message = "😭 You lost 😭!";
+    gameMessageText.textContent = message;
+    disableGameControls();
+  } else if (score["human"] === maxRounds) {
+    message = "😄 You won! 😄";
+    gameMessageText.textContent = message;
+    disableGameControls();
+  }
 }
 
 function evaluateWinner(playerOne, playerTwo) {
@@ -72,6 +83,24 @@ function updateChoice(element, choice) {
   }
 }
 
+function disableGameControls() {
+  const allGameControls = document.querySelectorAll(".game_control");
+  allGameControls.forEach((control) => {
+    control.disabled = true;
+  });
+  const gameControls = document.querySelector(".game_controls");
+  gameControls.classList.add("disable-element");
+}
+
+function enableGameControls() {
+  const allGameControls = document.querySelectorAll(".game_control");
+  allGameControls.forEach((control) => {
+    control.disabled = false;
+  });
+  const gameControls = document.querySelector(".game_controls");
+  gameControls.classList.remove("disable-element");
+}
+
 function updateUI(message, humanInput, computerInput) {
   // Update the UI with score and commentary
   updateScoresOnUI();
@@ -81,6 +110,7 @@ function updateUI(message, humanInput, computerInput) {
   listItem.textContent = message;
   listItem.classList.add("gameResult");
   gameHistoryList.prepend(listItem);
+  gameMessageText.textContent = message;
 }
 
 function resetUI() {
@@ -113,6 +143,7 @@ const restartButton = document.querySelector("#restart");
 const gameHistoryList = document.querySelector(".game_history");
 const humanInputText = document.querySelector("#human_choice");
 const computerInputText = document.querySelector("#computer_choice");
+const gameMessageText = document.querySelector("#game_message");
 
 rockButton.addEventListener("click", play);
 paperButton.addEventListener("click", play);
@@ -123,6 +154,7 @@ restartButton.addEventListener("click", () => {
   round = 0;
   updateScoresOnUI();
   resetUI();
+  enableGameControls();
 });
 
 // Prompt user
