@@ -61,6 +61,7 @@ header {
   background-color: #948979;
   box-shadow: none;
   border: none;
+  border: 1px solid #dfd0b8;
 }
 
 .game_control > span {
@@ -81,6 +82,7 @@ header {
   font-size: 18px;
   box-shadow: none;
   color: #393e46;
+  border: 1px solid #dfd0b8;
 }
 
 .commentary {
@@ -108,7 +110,7 @@ header {
 .gameResult {
   list-style-type: none;
   padding: 2px;
-  color: #393e46;;
+  color: #393e46;
   background-color: #948979;
   /* border: 1px solid #dfd0b8; */
   width: 59vw;
