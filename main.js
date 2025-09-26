@@ -31,7 +31,7 @@ function playGame(humanInput, computerInput) {
     message = `😐 Round ${round} a tie`;
   }
   console.log(message);
-  updateUI(message);
+  updateUI(message, humanInput, computerInput);
 }
 
 function evaluateWinner(playerOne, playerTwo) {
@@ -52,9 +52,31 @@ function evaluateWinner(playerOne, playerTwo) {
   }
 }
 
-function updateUI(message) {
+function updateChoice(element, choice) {
+  switch (choice) {
+    case 0:
+      element.textContent = "✊";
+      break;
+    case 1:
+      element.textContent = "✋";
+      break;
+    case 2:
+      element.textContent = "✌️";
+      break;
+    case -1:
+      element.textContent = "❔";
+      break;
+    default:
+      element.textContent = "❌";
+      break;
+  }
+}
+
+function updateUI(message, humanInput, computerInput) {
   // Update the UI with score and commentary
   updateScoresOnUI();
+  updateChoice(humanInputText, humanInput);
+  updateChoice(computerInputText, computerInput);
   let listItem = document.createElement("li");
   listItem.textContent = message;
   listItem.classList.add("gameResult");
@@ -65,6 +87,8 @@ function resetUI() {
   // reset the UI at the time of a game restart.
   let allGameResult = document.querySelectorAll(".gameResult");
   allGameResult.forEach((result) => result.remove());
+  updateChoice(humanInputText, -1);
+  updateChoice(computerInputText, -1);
 }
 
 function updateScoresOnUI() {
@@ -73,6 +97,7 @@ function updateScoresOnUI() {
 }
 
 function play(e) {
+  e.stopPropagation();
   console.log(e.target.dataset.value);
   const humanInput = parseInt(e.target.dataset.value);
   const computerInput = getRandomInt(0, 2);
@@ -86,6 +111,8 @@ const humanScore = document.querySelector("#human_score");
 const computerScore = document.querySelector("#computer_score");
 const restartButton = document.querySelector("#restart");
 const gameHistoryList = document.querySelector(".game_history");
+const humanInputText = document.querySelector("#human_choice");
+const computerInputText = document.querySelector("#computer_choice");
 
 rockButton.addEventListener("click", play);
 paperButton.addEventListener("click", play);
