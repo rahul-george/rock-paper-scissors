@@ -93,6 +93,7 @@ scissorsButton.addEventListener("click", play);
 restartButton.addEventListener("click", () => {
   score.human = 0;
   score.computer = 0;
+  round = 0;
   updateScoresOnUI();
   resetUI();
 });
