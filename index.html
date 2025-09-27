@@ -7,27 +7,28 @@
     <title>Document</title>
   </head>
   <body>
-    <!-- Game Frame -->
-    <div class="game_frame">
-      <!-- Title Block -->
-      <header>
+    <!-- header -->
+    <header>
+      <div>
         <h1>Rock Paper Scissors</h1>
-      </header>
+        <p>✊ ✋ ✌️</p>
+      </div>
+    </header>
 
-      <!-- Score Card -->
-      <section class="scorecard">
+    <article name="game">
+      <section name="stats" class="scorecard">
         <div>
           <div class="player">
             <span class="player_score">
-              <p class="player_name">You:</p>
-              <p class="player_score" id="human_score">0</p>
+              You:
+              <span id="human_score">0</span>
             </span>
             <span id="human_choice" class="player_choice">❔</span>
           </div>
           <div class="player">
             <span class="player_score">
-              <p class="player_name">Computer:</p>
-              <p class="player_score" id="computer_score">0</p>
+              Computer:
+              <span id="computer_score">0</span>
             </span>
             <span id="computer_choice" class="player_choice">❔</span>
           </div>
@@ -36,10 +37,7 @@
           <p id="game_message">Start a game! First player to reach 5 wins!</p>
         </div>
       </section>
-
-      <!-- Current Game -->
-      <section class="current_game">
-        <section></section>
+      <section name="controls" class="current_game">
         <div class="game_controls">
           <button class="game_control">
             <span data-value="0" id="rock_button">✊</span>
@@ -54,22 +52,23 @@
         <div class="restart_game">
           <button class="restart" id="restart">New Game</button>
         </div>
-        <!-- Commentary -->
-        <section class="commentary">
-          <h1>Commentary</h1>
-          <ul class="game_history"></ul>
-        </section>
       </section>
+      <section name="history" class="commentary">
+        <h1>Commentary</h1>
+        <ul class="game_history"></ul>
+      </section>
+    </article>
 
-      <!-- Footer - Copyright -->
-      <footer>
+    <!-- footer -->
+    <footer>
+      <span>
         ©
         <script>
           document.write(new Date().getFullYear());
         </script>
         Rahul George. All rights reserved.
-      </footer>
-    </div>
+      </span>
+    </footer>
     <script src="./main.js"></script>
   </body>
 </html>

@@ -1,6 +1,63 @@
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #222831;
+  width: 100vw;
+}
+
+header div {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  max-width: 1200px;
+  padding: 0;
+  margin: 0;
+}
+
+header h1 {
+  padding: 5px;
+  margin: 0;
+}
+
+header p {
+  padding: 5px;
+  margin: 0;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #222831;
+  width: 100vw;
+  padding: 20px 0px;
+}
+
+footer span {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 1200px;
+}
+
+article {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  max-width: 1200px;
+}
+
 body {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
   background-color: #393e46;
   margin: 0;
   padding: 0;
@@ -12,12 +69,6 @@ body {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-}
-header {
-  display: flex;
-  justify-content: center;
-  background-color: #222831;
-  width: 100vw;
 }
 
 .scorecard {
@@ -33,6 +84,8 @@ header {
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  gap: 10px;
+  max-width: 450px;
 }
 
 #game_message {
@@ -44,10 +97,10 @@ header {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 20vw;
+  width: 100px;
   margin: 0;
   padding: 0;
-  gap: 0;
+  gap: 10px;
 }
 
 .player_choice {
@@ -58,15 +111,6 @@ header {
   margin: 0;
   padding: 0;
   font-size: 40px;
-}
-
-.player_score {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  font-size: 18px;
 }
 
 .disable-element {
@@ -150,7 +194,7 @@ header {
   overflow-y: clip;
   padding: 5px;
   max-height: 20vh;
-  width: 60vw;
+  width: 450px;
 
   border: 2px solid #dfd0b8;
   background-color: #948979;
@@ -162,12 +206,5 @@ header {
   background-color: #948979;
   /* border: 1px solid #dfd0b8; */
   width: 59vw;
-}
-
-footer {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  margin: 10px 0px;
+  width: 450px;
 }
