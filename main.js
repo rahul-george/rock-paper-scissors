@@ -31,7 +31,6 @@ function playGame(humanInput, computerInput) {
     message = `😐 Round ${round} a tie`;
   }
 
-  console.log(message);
   updateUI(message, humanInput, computerInput);
 
   if (score["computer"] === maxRounds) {
@@ -134,12 +133,22 @@ function play(e) {
   playGame(humanInput, computerInput);
 }
 
+function newGame(e) {
+  e.stopPropagation();
+  score.human = 0;
+  score.computer = 0;
+  round = 0;
+  updateScoresOnUI();
+  resetUI();
+  enableGameControls();
+}
+
 const rockButton = document.querySelector("#rock_button");
 const paperButton = document.querySelector("#paper_button");
 const scissorsButton = document.querySelector("#scissors_button");
 const humanScore = document.querySelector("#human_score");
 const computerScore = document.querySelector("#computer_score");
-const restartButton = document.querySelector("#restart");
+const newGameButton = document.querySelector("#restart");
 const gameHistoryList = document.querySelector(".game_history");
 const humanInputText = document.querySelector("#human_choice");
 const computerInputText = document.querySelector("#computer_choice");
@@ -148,13 +157,4 @@ const gameMessageText = document.querySelector("#game_message");
 rockButton.addEventListener("click", play);
 paperButton.addEventListener("click", play);
 scissorsButton.addEventListener("click", play);
-restartButton.addEventListener("click", () => {
-  score.human = 0;
-  score.computer = 0;
-  round = 0;
-  updateScoresOnUI();
-  resetUI();
-  enableGameControls();
-});
-
-// Prompt user
+newGameButton.addEventListener("click", newGame);
