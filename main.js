@@ -22,24 +22,24 @@ function playGame(humanInput, computerInput) {
 
   let message = "";
   if (winner === "playerOne") {
-    message = `😀 You win round ${round}`;
+    message = `😀 You <span class="resultAccent">win</span> round ${round}`;
     score["human"]++;
   } else if (winner === "playerTwo") {
-    message = `😞 You lost round ${round}`;
+    message = `😞 You <span class="resultAccent">lost</span> round ${round}`;
     score["computer"]++;
   } else {
-    message = `😐 Round ${round} a tie`;
+    message = `😐 Round ${round} a <span class="resultAccent">tie</span>`;
   }
 
   updateUI(message, humanInput, computerInput);
 
   if (score["computer"] === maxRounds) {
-    message = "😭 You lost 😭!";
-    gameMessageText.textContent = message;
+    message = '😭 You <span class="resultAccent">won</span> 😭!';
+    gameMessageText.innerHTML = message;
     disableGameControls();
   } else if (score["human"] === maxRounds) {
-    message = "😄 You won! 😄";
-    gameMessageText.textContent = message;
+    message = '😄 You <span class="resultAccent">won</span>! 😄';
+    gameMessageText.innerHTML = message;
     disableGameControls();
   }
 }
@@ -106,10 +106,10 @@ function updateUI(message, humanInput, computerInput) {
   updateChoice(humanInputText, humanInput);
   updateChoice(computerInputText, computerInput);
   let listItem = document.createElement("li");
-  listItem.textContent = message;
+  listItem.innerHTML = message;
   listItem.classList.add("gameResult");
   gameHistoryList.prepend(listItem);
-  gameMessageText.textContent = message;
+  gameMessageText.innerHTML = message;
 }
 
 function resetUI() {
@@ -121,8 +121,8 @@ function resetUI() {
 }
 
 function updateScoresOnUI() {
-  humanScore.textContent = score.human;
-  computerScore.textContent = score.computer;
+  humanScore.innerHTML = `<span class="resultAccent">${score.human}</span>`;
+  computerScore.innerHTML = `<span class="resultAccent">${score.computer}</span>`;
 }
 
 function play(e) {
